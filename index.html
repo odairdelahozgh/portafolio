@@ -1,20 +1,388 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de Odair De La Hoz Rojas</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odair De La Hoz Rojas - Mi Portafolio Profesional</title>
 
-<body>
-    <h1>Bienvenido a mi Portafolio</h1>
-    <nav>
-      <ul>
-        <li><a href="./proyectos">Proyectos</a></li>
-        <li><a href="./hoja-de-vida-ats">Hoja de Vida ATS</a></li>
-        <li><a href="./blog">Blog</a></li>
-      </ul>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Fonts (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados para animaciones y ajustes finos -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* El atributo data-bs-spy se usa para resaltar el enlace de navegación activo según el scroll */
+            position: relative; 
+        }
+
+        /* Estilo para el desplazamiento suave */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Ajuste para que las secciones no queden ocultas debajo de la barra de navegación fija */
+        section {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+        
+        .hero-section {
+            padding-top: 0;
+            padding-bottom: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Imagen de fondo actualizada para un perfil de desarrollador */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Animación de aparición (fade-in) */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav">
+
+    <!-- 1. Barra de Navegación -->
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#inicio">Odair De La Hoz Rojas</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#acerca-de-mi">Acerca de mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#habilidades">Habilidades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
+
+    <!-- 2. Sección de Inicio (Hero) -->
+    <header id="inicio" class="hero-section text-white text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Tu Nombre Completo</h1>
+            <p class="lead my-4">Desarrollador Web Full Stack | Especialista en Soluciones Creativas</p>
+            <a href="#proyectos" class="btn btn-primary btn-lg mx-2">Ver mis proyectos</a>
+            <a href="#" class="btn btn-outline-light btn-lg mx-2">Descargar CV</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 3. Sección "Acerca de mí" -->
+        <section id="acerca-de-mi" class="container fade-in-section">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Acerca de mí</h2>
+                <hr class="w-25 mx-auto">
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    <img src="https://placehold.co/400x400/EFEFEF/333333?text=Tu+Foto" class="img-fluid rounded-circle" alt="Foto profesional" onerror="this.onerror=null;this.src='https://placehold.co/400x400/EFEFEF/333333?text=Error+de+imagen';">
+                </div>
+                <div class="col-md-8">
+                    <p class="lead">
+                        ¡Hola! Soy un apasionado desarrollador web con experiencia en la creación de aplicaciones web modernas y funcionales. Me especializo en el desarrollo tanto front-end como back-end, y disfruto transformando ideas complejas en soluciones elegantes y eficientes.
+                    </p>
+                    <p>
+                        Mi objetivo es construir productos que no solo sean visualmente atractivos, sino que también ofrezcan una experiencia de usuario intuitiva y fluida. Siempre estoy aprendiendo nuevas tecnologías para mantenerme al día con las últimas tendencias de la industria. Busco unirme a un equipo innovador donde pueda contribuir con mis habilidades y seguir creciendo profesionalmente.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sección de Proyectos -->
+        <section id="proyectos" class="bg-light fade-in-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Mis Proyectos Destacados</h2>
+                    <hr class="w-25 mx-auto">
+                </div>
+                <div class="row g-4">
+                    <!-- Proyecto 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Proyecto+1" class="card-img-top" alt="Imagen del Proyecto 1" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Error';">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Nombre del Proyecto 1</h5>
+                                <p class="card-text">Una breve descripción de este proyecto, explicando su propósito, el problema que resuelve y tu rol específico en su desarrollo.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-primary">HTML5</span>
+                                    <span class="badge bg-success">Bootstrap</span>
+                                    <span class="badge bg-warning text-dark">JavaScript</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="#" class="btn btn-dark"><i class="bi bi-github"></i> Ver Código</a>
+                                    <a href="#" class="btn btn-outline-dark"><i class="bi bi-box-arrow-up-right"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Proyecto+2" class="card-img-top" alt="Imagen del Proyecto 2" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Error';">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Nombre del Proyecto 2</h5>
+                                <p class="card-text">Una breve descripción de este proyecto, explicando su propósito, el problema que resuelve y tu rol específico en su desarrollo.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-primary">React</span>
+                                    <span class="badge bg-info">API REST</span>
+                                    <span class="badge bg-secondary">Node.js</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="#" class="btn btn-dark"><i class="bi bi-github"></i> Ver Código</a>
+                                    <a href="#" class="btn btn-outline-dark"><i class="bi bi-box-arrow-up-right"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100">
+                            <img src="https://placehold.co/600x400/CCCCCC/FFFFFF?text=Proyecto+3" class="card-img-top" alt="Imagen del Proyecto 3" onerror="this.onerror=null;this.src='https://placehold.co/600x400/CCCCCC/FFFFFF?text=Error';">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold">Nombre del Proyecto 3</h5>
+                                <p class="card-text">Una breve descripción de este proyecto, explicando su propósito, el problema que resuelve y tu rol específico en su desarrollo.</p>
+                                <div class="mb-3">
+                                    <span class="badge bg-danger">Angular</span>
+                                    <span class="badge bg-primary">TypeScript</span>
+                                    <span class="badge bg-success">Firebase</span>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="#" class="btn btn-dark"><i class="bi bi-github"></i> Ver Código</a>
+                                    <a href="#" class="btn btn-outline-dark"><i class="bi bi-box-arrow-up-right"></i> Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Sección de Habilidades -->
+        <section id="habilidades" class="container fade-in-section">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Habilidades Técnicas</h2>
+                <hr class="w-25 mx-auto">
+            </div>
+            <div class="row text-center">
+                <!-- Columna Front-End -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-3">Front-End</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-filetype-html text-primary"></i> HTML5</li>
+                        <li class="mb-2"><i class="bi bi-filetype-css text-primary"></i> CSS3</li>
+                        <li class="mb-2"><i class="bi bi-filetype-js text-primary"></i> JavaScript (ES6+)</li>
+                        <li class="mb-2"><i class="bi bi-bootstrap text-primary"></i> Bootstrap 5</li>
+                        <li class="mb-2"><i class="bi bi-filetype-jsx text-primary"></i> React</li>
+                    </ul>
+                </div>
+                <!-- Columna Back-End -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-3">Back-End</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-hdd-stack text-success"></i> Node.js</li>
+                        <li class="mb-2"><i class="bi bi-hdd-stack text-success"></i> Express</li>
+                        <li class="mb-2"><i class="bi bi-database text-success"></i> SQL (PostgreSQL)</li>
+                        <li class="mb-2"><i class="bi bi-database text-success"></i> NoSQL (MongoDB)</li>
+                        <li class="mb-2"><i class="bi bi-braces text-success"></i> API REST</li>
+                    </ul>
+                </div>
+                <!-- Columna Herramientas -->
+                <div class="col-md-4 mb-4">
+                    <h4 class="mb-3">Herramientas</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-git text-dark"></i> Git & GitHub</li>
+                        <li class="mb-2"><i class="bi bi-terminal text-dark"></i> Línea de Comandos</li>
+                        <li class="mb-2"><i class="bi bi-filetype-json text-dark"></i> npm / yarn</li>
+                        <li class="mb-2"><i class="bi bi-palette text-dark"></i> Figma</li>
+                        <li class="mb-2"><i class="bi bi-cloud text-dark"></i> Vercel / Netlify</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Sección de Contacto -->
+        <section id="contacto" class="bg-light fade-in-section">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="fw-bold">Hablemos</h2>
+                    <hr class="w-25 mx-auto">
+                    <p class="lead">¿Tienes un proyecto en mente o una oportunidad para mí? ¡Me encantaría saber de ti!</p>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Contenedor para la alerta de éxito -->
+                        <div id="alert-container"></div>
+                        <form id="contact-form" class="needs-validation" novalidate>
+                            <div class="mb-3">
+                                <label for="name" class="form-label">Nombre</label>
+                                <input type="text" class="form-control" id="name" placeholder="Tu nombre completo" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa tu nombre.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Correo Electrónico</label>
+                                <input type="email" class="form-control" id="email" placeholder="tu@email.com" required>
+                                <div class="invalid-feedback">
+                                    Por favor, ingresa un correo electrónico válido.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Mensaje</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                <div class="invalid-feedback">
+                                    Por favor, escribe tu mensaje.
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg">Enviar Mensaje</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 7. Pie de Página -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <div class="mb-3">
+                <a href="#" class="text-white mx-2 fs-4"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-white mx-2 fs-4"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-white mx-2 fs-4"><i class="bi bi-twitter-x"></i></a>
+            </div>
+            <p class="mb-0">Copyright &copy; <span id="current-year"></span> Odair De La Hoz Rojas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap 5 JS (Bundle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <!-- JavaScript Personalizado -->
+    <script>
+        // Espera a que todo el contenido del DOM esté cargado antes de ejecutar el script
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Resaltado del enlace de navegación activo al hacer scroll ---
+            // Se activa mediante los atributos data-bs-spy="scroll" y data-bs-target="#main-nav" en el <body>
+            // y el href a los IDs de las secciones en los enlaces de la barra de navegación.
+            // Bootstrap se encarga de la lógica automáticamente.
+
+            // --- Año dinámico en el footer ---
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Validación del formulario de contacto ---
+            const contactForm = document.getElementById('contact-form');
+            const alertContainer = document.getElementById('alert-container');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    // Previene el envío real del formulario
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    if (contactForm.checkValidity()) {
+                        // Si el formulario es válido
+                        // Aquí podrías enviar los datos a un servicio como Formspree o Netlify Forms
+                        // Por ahora, solo mostramos un mensaje de éxito.
+                        
+                        alertContainer.innerHTML = `
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>¡Mensaje enviado!</strong> Gracias por contactarme. Te responderé pronto.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        `;
+                        
+                        // Limpia el formulario y quita las clases de validación
+                        contactForm.reset();
+                        contactForm.classList.remove('was-validated');
+                    } else {
+                        // Si el formulario no es válido, Bootstrap se encarga de mostrar los mensajes de error
+                        // al agregar esta clase.
+                        contactForm.classList.add('was-validated');
+                    }
+                }, false);
+            }
+
+            // --- Animación de aparición al hacer scroll ---
+            const sections = document.querySelectorAll('.fade-in-section');
+
+            const observerOptions = {
+                root: null, // El viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Se activa cuando el 10% del elemento es visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    // Si el elemento está intersectando (visible en la pantalla)
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Deja de observar el elemento una vez que ha sido animado
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            // Observa cada una de las secciones
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+        });
+    </script>
 </body>
 </html>
